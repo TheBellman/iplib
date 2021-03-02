@@ -7,10 +7,10 @@ phases:
   pre_build:
     commands:
       - echo Build started
-      - export CODEARTIFACT_TOKEN=`aws --region eu-west-1 codeartifact get-authorization-token --domain development --domain-owner 889199313043 --query authorizationToken --output text`
   build:
     commands:
-      - mvn -s settings.xml clean package deploy
+      - export CODEARTIFACT_TOKEN=`aws --region eu-west-1 codeartifact get-authorization-token --domain development --domain-owner 889199313043 --query authorizationToken --output text`
+      - mvn --no-transfer-progress -s settings.xml clean package deploy
   post_build:
     commands:
       - echo Build completed
