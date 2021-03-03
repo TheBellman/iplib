@@ -18,7 +18,7 @@ import java.util.stream.Stream;
  */
 @ThreadSafe
 public final class IPRange implements Ranges {
-    private ResultHolder holder;
+    private final ResultHolder holder;
 
     /**
      * default constructor. This will attempt to load the required data from AWS on construction.
