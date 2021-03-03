@@ -9,7 +9,7 @@ phases:
       - echo Build started
   build:
     commands:
-      - export CODEARTIFACT_TOKEN=`aws --region eu-west-1 codeartifact get-authorization-token --domain development --domain-owner 889199313043 --query authorizationToken --output text`
+      - export CODEARTIFACT_AUTH_TOKEN=`aws --region eu-west-1 codeartifact get-authorization-token --domain development --domain-owner 889199313043 --query authorizationToken --output text`
       - mvn --no-transfer-progress -s settings.xml clean package deploy
   post_build:
     commands:
