@@ -33,7 +33,7 @@
         <repository>
             <id>development--iplib</id>
             <name>development--iplib</name>
-            <url>https://development-889199313043.d.codeartifact.eu-west-1.amazonaws.com/maven/iplib/</url>
+            <url>https://development-889199313043.d.codeartifact.eu-west-1.amazonaws.com/maven/maven/</url>
         </repository>
     </distributionManagement>
 

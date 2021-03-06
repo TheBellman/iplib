@@ -1,7 +1,7 @@
 <settings>
     <servers>
         <server>
-            <id>development--iplib</id>
+            <id>development--maven</id>
             <username>aws</username>
             <password>${env.CODEARTIFACT_AUTH_TOKEN}</password>
         </server>
