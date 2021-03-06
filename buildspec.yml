@@ -1,15 +1,13 @@
 version: 0.2
 
-env:
-  variables:
-    STAMP: "1.0-`date +%Y%m%d.%H%M%S`"
 phases:
   install:
     runtime-versions:
       java: corretto11
   pre_build:
     commands:
-      - echo Build started
+      - STAMP="1.0-`date +%Y%m%d.%H%M%S`"
+      - echo Build started for [$STAMP]
   build:
     commands:
       - export CODEARTIFACT_AUTH_TOKEN=`aws --region eu-west-1 codeartifact get-authorization-token --domain development --domain-owner 889199313043 --query authorizationToken --output text`
