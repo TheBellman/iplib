@@ -31,8 +31,8 @@
 
     <distributionManagement>
         <repository>
-            <id>development--iplib</id>
-            <name>development--iplib</name>
+            <id>development--maven</id>
+            <name>development--maven</name>
             <url>https://development-889199313043.d.codeartifact.eu-west-1.amazonaws.com/maven/maven/</url>
         </repository>
     </distributionManagement>
