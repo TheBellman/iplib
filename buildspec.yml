@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    STAMP: "1.0-"`date +%Y%m%d.%H%M%S`
+    STAMP: "1.0-`date +%Y%m%d.%H%M%S`"
 phases:
   install:
     runtime-versions:
