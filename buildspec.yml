@@ -6,11 +6,11 @@ phases:
       java: corretto11
   pre_build:
     commands:
-      - STAMP="1.0-`date +%Y%m%d.%H%M%S`"
+      - export STAMP="1.0-`date +%Y%m%d.%H%M%S`"
+      - export CODEARTIFACT_AUTH_TOKEN=`aws --region eu-west-1 codeartifact get-authorization-token --domain development --domain-owner 889199313043 --query authorizationToken --output text`
       - echo Build started for [$STAMP]
   build:
     commands:
-      - export CODEARTIFACT_AUTH_TOKEN=`aws --region eu-west-1 codeartifact get-authorization-token --domain development --domain-owner 889199313043 --query authorizationToken --output text`
       - mvn --no-transfer-progress versions:set -DnewVersion=$STAMP
       - mvn --no-transfer-progress -s settings.xml clean package deploy
   post_build:
