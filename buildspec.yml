@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    STAMP: "1.0-$(date +%Y%m%d.%H%M%S)"
+    STAMP: "1.0-"`date +%Y%m%d.%H%M%S`
 phases:
   install:
     runtime-versions:
@@ -13,7 +13,7 @@ phases:
   build:
     commands:
       - export CODEARTIFACT_AUTH_TOKEN=`aws --region eu-west-1 codeartifact get-authorization-token --domain development --domain-owner 889199313043 --query authorizationToken --output text`
-      - mvn versions:set -DnewVersion=$STAMP
+      - mvn --no-transfer-progress versions:set -DnewVersion=$STAMP
       - mvn --no-transfer-progress -s settings.xml clean package deploy
   post_build:
     commands:
