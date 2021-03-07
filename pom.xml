@@ -27,17 +27,31 @@
         <jackson.version>2.12.0</jackson.version>
         <junit.version>5.7.1</junit.version>
         <lang.version>3.11</lang.version>
+        <caurl>https://development-889199313043.d.codeartifact.eu-west-1.amazonaws.com/maven/maven/</caurl>
     </properties>
 
     <distributionManagement>
         <repository>
             <id>development--maven</id>
             <name>development--maven</name>
-            <url>https://development-889199313043.d.codeartifact.eu-west-1.amazonaws.com/maven/maven/</url>
+            <url>${caurl}</url>
         </repository>
     </distributionManagement>
 
+    <repositories>
+        <repository>
+            <id>development--maven</id>
+            <url>${caurl}</url>
+        </repository>
+    </repositories>
+
     <dependencies>
+        <dependency>
+            <groupId>net.parttimepolymath</groupId>
+            <artifactId>ldutils</artifactId>
+            <version>1.0-20210307.141821</version>
+        </dependency>
+
         <dependency>
             <groupId>net.jcip</groupId>
             <artifactId>jcip-annotations</artifactId>

@@ -2,7 +2,7 @@ package net.parttimepolymath.iplib;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import net.parttimepolymath.iplib.model.IPRanges;
-import net.parttimepolymath.iplib.util.ObjectMapperFactory;
+import net.parttimepolymath.utils.ObjectMapperFactory;
 
 import java.io.IOException;
 import java.net.URI;
