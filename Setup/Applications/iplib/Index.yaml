@@ -1,0 +1,6 @@
+harnessApiVersion: '1.0'
+type: APPLICATION
+branchName: main
+description: iplib
+gitConnector: iplib
+isGitSyncEnabled: true
