@@ -24,7 +24,7 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <lombok.version>1.18.18</lombok.version>
-        <jackson.version>2.12.0</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
         <junit.version>5.7.1</junit.version>
         <lang.version>3.11</lang.version>
         <caurl>https://development-889199313043.d.codeartifact.eu-west-1.amazonaws.com/maven/maven/</caurl>
