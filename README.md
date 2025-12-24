@@ -4,7 +4,17 @@ This is a very small libary that is to be used for extracting IP ranges for serv
 
 ## Usage
 
-To use the library, include it as a dependency, then construct an instance:
+This is a simple JAR based library. To use it, include the dependency
+
+```xml
+<dependency>
+    <groupId>net.parttimepolymath</groupId>
+    <artifactId>iplib</artifactId>
+    <version>1.1.0</version>
+</dependency>
+```
+
+Then construct an instance:
 
 ```
 IPRange instance = new IPRange();
@@ -29,9 +39,58 @@ Once you have an instance, there are 5 "get" operations that should be self-expl
 In each case, setting `ipv6` to true will return the IPV6 cidr blocks instead of the IPV4 blocks.
 
 ## Prerequisites
-This was built with Java 12.0.2 and Maven 3.6.3.
+This was built with Java 21 and Maven 3.9.
 
 It is assumed that Maven is in your execution path.
+
+### settings.xml
+The package is hosted in the GitHub maven repository, so you need to set up your settings.xml to be able to pull
+the dependency from there.
+
+You can find out more at [Working with the Apache Maven registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages)
+
+In essence though, you need to create a personal GitHub token as described at ....
+
+Then you need to setup your `~.m2/settings.xml` something like this so that Maven can find and access the
+repository that contains the dependency.
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
+  <!-- https://maven.apache.org/settings.html -->
+  <activeProfiles>
+    <activeProfile>github</activeProfile>
+  </activeProfiles>
+
+  <profiles>
+    <profile>
+      <id>github</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+          <id>github</id>
+          <url>https://maven.pkg.github.com/TheBellman/ldutils</url>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+    </profile>
+  </profiles>
+
+  <servers>
+    <server>
+      <id>github</id>
+      <username>YOUR_HANDLE</username>
+      <password>YOUR_TOKEN</password>
+    </server>
+  </servers>
+
+</settings>
+```
 
 ## Test and Build
 
@@ -48,7 +107,7 @@ $ mvn clean package
 [INFO] 
 [INFO] 
 [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ iplib ---
-[INFO] Building jar: /Users/robert/Projects/Java/iplib/target/iplib-1.0-SNAPSHOT.jar
+[INFO] Building jar: /Users/robert/Projects/Java/iplib/target/iplib-1.1.0.jar
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -59,13 +118,11 @@ $ mvn clean package
 
 The built JAR will be available in `target`.
 
-JavaDoc can be generated using `mvn javadoc:javadoc`, which will create it in HTML format under `target/site/apidocs`
-
-Alternately, use `mvn clean install` to additionally create the `iplib-1.0-SNAPSHOT-javadoc.jar`
+JavaDoc can be generated usi `mvn clean install` to create the `target/iplib-1.1.0.javadoc.jar`
 
 ## License
 
-Copyright 2021 Little Dog Digital
+Copyright 2025 Little Dog Digital
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
 

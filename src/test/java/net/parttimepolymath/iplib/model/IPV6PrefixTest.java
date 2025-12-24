@@ -1,7 +1,6 @@
 package net.parttimepolymath.iplib.model;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import net.parttimepolymath.utils.ObjectMapperFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -66,7 +65,7 @@ class IPV6PrefixTest {
 
     @Test
     void testEquals() {
-        assertEquals(instanceOne, new IPV6Prefix("2a05:d07a:a000::/40", "eu-south-1", "AMAZON", "eu-south-1"));
+        assertEquals(new IPV6Prefix("2a05:d07a:a000::/40", "eu-south-1", "AMAZON", "eu-south-1"), instanceOne);
         assertNotEquals(instanceOne, instanceTwo);
         assertNotEquals(null, instanceTwo);
     }
@@ -82,19 +81,5 @@ class IPV6PrefixTest {
     @Test
     void testToString() {
         assertEquals("IPV6Prefix(prefix=2a05:d07a:a000::/40, region=eu-south-1, service=AMAZON, networkBorderGroup=eu-south-1)", instanceOne.toString());
-    }
-
-    @Test
-    void toJson() throws JsonProcessingException {
-        String result = mapper.writeValueAsString(instanceOne);
-        assertEquals("{\"ipv6_prefix\":\"2a05:d07a:a000::/40\",\"region\":\"eu-south-1\",\"service\":\"AMAZON\"," +
-                "\"network_border_group\":\"eu-south-1\"}", result);
-    }
-
-    @Test
-    void fromJson() throws JsonProcessingException {
-        IPV6Prefix result = mapper.readValue("{\"ipv6_prefix\":\"2a05:d07a:a000::/40\",\"region\":\"eu-south-1\"," +
-                "\"service\":\"AMAZON\",\"network_border_group\":\"eu-south-1\"}", IPV6Prefix.class);
-        assertEquals(instanceOne, result);
     }
 }

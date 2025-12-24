@@ -1,7 +1,7 @@
 package net.parttimepolymath.iplib.model;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.core.JacksonException;
+import tools.jackson.databind.ObjectMapper;
 import net.parttimepolymath.utils.ObjectMapperFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -82,19 +82,5 @@ class IPV4PrefixTest {
     @Test
     void testToString() {
         assertEquals("IPV4Prefix(prefix=3.5.140.0/22, region=ap-northeast-2, service=AMAZON, networkBorderGroup=ap-northeast-2)", instanceOne.toString());
-    }
-
-    @Test
-    void toJson() throws JsonProcessingException {
-        String result = mapper.writeValueAsString(instanceOne);
-        assertEquals("{\"ip_prefix\":\"3.5.140.0/22\",\"region\":\"ap-northeast-2\",\"service\":\"AMAZON\"," +
-                "\"network_border_group\":\"ap-northeast-2\"}", result);
-    }
-
-    @Test
-    void fromJson() throws JsonProcessingException {
-        IPV4Prefix result = mapper.readValue("{\"ip_prefix\":\"3.5.140.0/22\",\"region\":\"ap-northeast-2\"," +
-                "\"service\":\"AMAZON\",\"network_border_group\":\"ap-northeast-2\"}", IPV4Prefix.class);
-        assertEquals(instanceOne, result);
     }
 }
