@@ -28,13 +28,15 @@
         <lang.version>3.19.0</lang.version>
     </properties>
 
-    <distributionManagement>
+    <repositories>
         <repository>
             <id>github</id>
-            <name>GitHub TheBellman Apache Maven Packages</name>
             <url>https://maven.pkg.github.com/TheBellman/*</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
         </repository>
-    </distributionManagement>
+    </repositories>
 
     <dependencies>
         <dependency>

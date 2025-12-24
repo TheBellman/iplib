@@ -28,6 +28,8 @@ jobs:
 
     - name: Build with Maven
       run: mvn --batch-mode --update-snapshots clean package
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Publish to GitHub Packages Apache Maven
       env:
