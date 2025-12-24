@@ -19,6 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @NotThreadSafe
 public final class IPRanges {
+
     /**
      * identifier of the version of the data.
      */

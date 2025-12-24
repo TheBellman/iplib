@@ -20,36 +20,21 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>11</java.version>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-        <lombok.version>1.18.18</lombok.version>
-        <jackson.version>2.12.0</jackson.version>
-        <junit.version>5.7.1</junit.version>
-        <lang.version>3.11</lang.version>
+        <java.version>21</java.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <lombok.version>1.18.42</lombok.version>
+        <jackson.version>3.0.0</jackson.version>
+        <junit.version>5.13.4</junit.version>
+        <lang.version>3.19.0</lang.version>
         <caurl>https://development-889199313043.d.codeartifact.eu-west-1.amazonaws.com/maven/maven/</caurl>
     </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>development--maven</id>
-            <name>development--maven</name>
-            <url>${caurl}</url>
-        </repository>
-    </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>development--maven</id>
-            <url>${caurl}</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
             <groupId>net.parttimepolymath</groupId>
             <artifactId>ldutils</artifactId>
-            <version>1.0-20210307.141821</version>
+            <version>1.3.2</version>
         </dependency>
 
         <dependency>
@@ -66,7 +51,7 @@
 
         <!-- note this gives you jackson-core and jackson-annotations as well -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
+            <groupId>tools.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
         </dependency>
@@ -90,7 +75,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M4</version>
+                <version>3.5.4</version>
                 <configuration>
                     <skipTests>false</skipTests>
                     <testFailureIgnore>false</testFailureIgnore>
@@ -102,7 +87,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.14.1</version>
                 <configuration>
                     <annotationProcessorPaths>
                         <path>
@@ -117,7 +102,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.12.0</version>
+                <!-- turn off complaints about missing javadoc for implicit (or generated) default constructors -->
+                <configuration>
+                    <doclint>none</doclint>
+                </configuration>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -131,7 +120,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>3.0.0-M3</version>
+                <version>3.6.2</version>
                 <executions>
                     <execution>
                         <id>enforce-maven</id>
