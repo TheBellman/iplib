@@ -5,17 +5,16 @@
     <name>IPLib</name>
     <groupId>net.parttimepolymath</groupId>
     <artifactId>iplib</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
     <description>Simple library to extract IP ranges fom the IP range set published by AWS</description>
-    <url>http://parttimepolymath.net</url>
+    <url>https://parttimepolymath.net</url>
 
     <scm>
-        <url>scm:ssh://git-codecommit.eu-west-2.amazonaws.com/v1/repos/iplib</url>
-        <connection>scm:ssh://git-codecommit.eu-west-2.amazonaws.com/v1/repos/iplib</connection>
-        <developerConnection>scm:ssh://git-codecommit.eu-west-2.amazonaws.com/v1/repos/iplib</developerConnection>
-        <tag>iplib-1.0-snapshot</tag>
+        <url>scm:git:https://github.com/TheBellman/iplib</url>
+        <connection>scm:git:git@github.com:TheBellman/iplib.git</connection>
+        <developerConnection>scm:git:git@github.com:TheBellman/iplib.git</developerConnection>
     </scm>
 
     <properties>
@@ -27,7 +26,6 @@
         <jackson.version>3.0.0</jackson.version>
         <junit.version>5.13.4</junit.version>
         <lang.version>3.19.0</lang.version>
-        <caurl>https://development-889199313043.d.codeartifact.eu-west-1.amazonaws.com/maven/maven/</caurl>
     </properties>
 
     <dependencies>
