@@ -5,7 +5,7 @@
     <name>IPLib</name>
     <groupId>net.parttimepolymath</groupId>
     <artifactId>iplib</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <packaging>jar</packaging>
 
     <description>Simple library to extract IP ranges fom the IP range set published by AWS</description>
@@ -27,6 +27,14 @@
         <junit.version>5.13.4</junit.version>
         <lang.version>3.19.0</lang.version>
     </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Repository</name>
+            <url>https://maven.pkg.github.com/TheBellman/iplib</url>
+        </repository>
+    </distributionManagement>
 
     <repositories>
         <repository>

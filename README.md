@@ -10,7 +10,7 @@ This is a simple JAR based library. To use it, include the dependency
 <dependency>
     <groupId>net.parttimepolymath</groupId>
     <artifactId>iplib</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
 </dependency>
 ```
 
@@ -107,7 +107,7 @@ $ mvn clean package
 [INFO] 
 [INFO] 
 [INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ iplib ---
-[INFO] Building jar: /Users/robert/Projects/Java/iplib/target/iplib-1.1.0.jar
+[INFO] Building jar: /Users/robert/Projects/Java/iplib/target/iplib-1.1.1.jar
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -118,7 +118,7 @@ $ mvn clean package
 
 The built JAR will be available in `target`.
 
-JavaDoc can be generated usi `mvn clean install` to create the `target/iplib-1.1.0.javadoc.jar`
+JavaDoc can be generated usi `mvn clean install` to create the `target/iplib-1.1.1.javadoc.jar`
 
 ## License
 
